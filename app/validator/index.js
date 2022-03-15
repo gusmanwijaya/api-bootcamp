@@ -61,4 +61,11 @@ module.exports = {
       .withMessage("Please input a valid email!"),
     body("password").notEmpty().withMessage("Password can't be empty!"),
   ],
+  categoryValidator: [
+    body("name")
+      .notEmpty()
+      .withMessage("Name can't be empty!")
+      .isLength({ max: 50 })
+      .withMessage("Name maximal 50 characters!"),
+  ],
 };

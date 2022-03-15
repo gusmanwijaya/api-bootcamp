@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken");
 const config = require("../config");
 
-const Participant = require("../api/v1/participant/model");
-const User = require("../api/v1/user/model");
+const Participant = require("../api/v1/cms/participant/model");
+const User = require("../api/v1/cms/user/model");
 
 module.exports = {
   isLogin: async (req, res, next) => {

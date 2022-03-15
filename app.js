@@ -8,7 +8,8 @@ const cors = require("cors");
 const authParticipantRouter = require("./app/api/v1/auth/participant/router");
 const authUserRouter = require("./app/api/v1/auth/user/router");
 
-const categoryRouter = require("./app/api/v1/category/router");
+const categoryRouter = require("./app/api/v1/cms/category/router");
+const userRouter = require("./app/api/v1/cms/user/router");
 
 const { handleError } = require("./app/errors");
 
@@ -28,6 +29,7 @@ app.use(`${apiVersion}/auth/participant`, authParticipantRouter);
 app.use(`${apiVersion}/auth/user`, authUserRouter);
 
 app.use(`${apiVersion}/category`, categoryRouter);
+app.use(`${apiVersion}/user`, userRouter);
 
 app.use(handleError);
 

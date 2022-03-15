@@ -3,7 +3,7 @@ const argon2 = require("argon2");
 const { validationResult } = require("express-validator");
 
 const config = require("../../../../config");
-const User = require("../../user/model");
+const User = require("../../cms/user/model");
 
 module.exports = {
   signUp: async (req, res, next) => {

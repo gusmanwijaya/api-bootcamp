@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const { isLogin } = require("../../../middlewares/auth");
-const { categoryValidator } = require("../../../validator");
+const { isLogin } = require("../../../../middlewares/auth");
+const { categoryValidator } = require("../../../../validator");
 const { create, getAll, getOne, update, destroy } = require("./controller");
 
 router.use(isLogin);

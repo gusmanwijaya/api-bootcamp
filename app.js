@@ -16,6 +16,8 @@ const speakerRouter = require("./app/api/v1/cms/speaker/router");
 const eventRouter = require("./app/api/v1/cms/event/router");
 const transactionRouter = require("./app/api/v1/cms/transaction/router");
 
+const frontendRouter = require("./app/api/v1/frontend/router");
+
 const { handleError } = require("./app/errors");
 
 const app = express();
@@ -40,6 +42,8 @@ app.use(`${apiVersion}/payment`, paymentRouter);
 app.use(`${apiVersion}/speaker`, speakerRouter);
 app.use(`${apiVersion}/event`, eventRouter);
 app.use(`${apiVersion}/transaction`, transactionRouter);
+
+app.use(`${apiVersion}`, frontendRouter);
 
 app.use(handleError);
 

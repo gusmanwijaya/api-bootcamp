@@ -6,7 +6,7 @@ const {
   userValidator,
   userChangeEmailValidator,
   userChangePasswordValidator,
-} = require("../../../../validator");
+} = require("../../../../validator/user");
 const {
   getAll,
   getOne,

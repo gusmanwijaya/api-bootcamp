@@ -15,6 +15,11 @@ const eventSchema = mongoose.Schema(
       type: Date,
       required: [true, "Date can't be empty!"],
     },
+    city: {
+      type: String,
+      maxLength: 50,
+      required: [true, "City can't be empty!"],
+    },
     price: {
       type: Number,
     },

@@ -5,7 +5,7 @@ module.exports = {
     try {
       const data = await Event.find()
         .select(
-          "_id title cover date price tagline about keypoint vanueName category speaker user"
+          "_id title cover date city price tagline about keypoint vanueName category speaker user"
         )
         .populate("category", "_id name", "Category")
         .populate("speaker", "_id name avatar role", "Speaker")

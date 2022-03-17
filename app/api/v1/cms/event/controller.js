@@ -5,7 +5,6 @@ const fs = require("fs");
 
 const config = require("../../../../config");
 const Event = require("./model");
-const { findOne } = require("./model");
 
 module.exports = {
   create: async (req, res, next) => {
@@ -26,6 +25,7 @@ module.exports = {
           const {
             title,
             date,
+            city,
             price,
             tagline,
             about,
@@ -57,6 +57,7 @@ module.exports = {
                 title,
                 cover: `images/${fileName}`,
                 date,
+                city,
                 price,
                 tagline,
                 about,
@@ -84,7 +85,7 @@ module.exports = {
     try {
       const data = await Event.find()
         .select(
-          "_id title cover date price tagline about keypoint vanueName category speaker user"
+          "_id title cover date city price tagline about keypoint vanueName category speaker user"
         )
         .populate("category", "_id name", "Category")
         .populate("speaker", "_id name avatar role", "Speaker")
@@ -104,7 +105,7 @@ module.exports = {
 
       const data = await Event.findOne({ _id: id })
         .select(
-          "_id title cover date price tagline about keypoint vanueName category speaker user"
+          "_id title cover date city price tagline about keypoint vanueName category speaker user"
         )
         .populate("category", "_id name", "Category")
         .populate("speaker", "_id name avatar role", "Speaker")

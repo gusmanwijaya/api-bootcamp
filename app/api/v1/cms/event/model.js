@@ -12,7 +12,7 @@ const eventSchema = mongoose.Schema(
       required: [true, "Cover can't be empty!"],
     },
     date: {
-      type: Date,
+      type: String,
       required: [true, "Date can't be empty!"],
     },
     city: {

@@ -2,27 +2,25 @@ const { body } = require("express-validator");
 
 module.exports = {
   transactionValidator: [
-    body("firstName")
+    body("event")
       .notEmpty()
-      .withMessage("First name can't be empty!")
-      .isLength({ max: 50 })
-      .withMessage("First name maximal 50 characters!"),
-    body("lastName")
+      .withMessage("Event can't be empty!")
+      .isMongoId()
+      .withMessage("Event must be an ObjectId"),
+    body("personalDetail")
       .notEmpty()
-      .withMessage("Last name can't be empty!")
-      .isLength({ max: 50 })
-      .withMessage("Last name maximal 50 characters!"),
-    body("email")
+      .withMessage("Personal detail can't be empty!")
+      .isObject()
+      .withMessage("Personal detail must be an object!"),
+    body("payment")
       .notEmpty()
-      .withMessage("Email can't be empty!")
-      .isEmail()
-      .withMessage("Please input a valid email!")
-      .isLength({ max: 50 })
-      .withMessage("Email maximal 50 characters!"),
-    body("role")
+      .withMessage("Payment can't be empty!")
+      .isMongoId()
+      .withMessage("Payment must be an ObjectId"),
+    body("participant")
       .notEmpty()
-      .withMessage("Role can't be empty!")
-      .isLength({ max: 50 })
-      .withMessage("Role maximal 50 characters!"),
+      .withMessage("Participant can't be empty!")
+      .isMongoId()
+      .withMessage("Participant must be an ObjectId"),
   ],
 };
